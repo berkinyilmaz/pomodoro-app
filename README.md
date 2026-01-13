@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# 🍅 Pomodoro Timer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A beautiful, feature-rich Pomodoro timer application built with React and TypeScript. Stay focused, track your productivity, and achieve your daily goals.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[pomodoro-app-blush.vercel.app](https://pomodoro-app-blush.vercel.app)**
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Timer & Focus
+- **Customizable Pomodoro Timer** - Adjust focus and break durations (1-60 min)
+- **Focus Mode** - Press `F` to hide distractions and focus on the timer
+- **Smart Time Snapping** - Timer adjusts in clean intervals (1, 5, 10, 15...)
+- **Timer Presets** - Classic (25/5), Deep Work (50/10), Quick Tasks (15/3)
 
-## Expanding the ESLint configuration
+### Productivity Tracking
+- **Streak Counter** 🔥 - Track your daily consistency
+- **Weekly Charts** - Visualize your last 7 days of progress
+- **Session Statistics** - Total pomodoros, focus time, completed tasks
+- **Daily Goals** - Set and track your daily session targets
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Task Management
+- **Task List** - Create, edit, and complete tasks
+- **Color Coding** - Assign colors to categorize tasks
+- **Preset Quick Add** - One-click task creation (Coding, Study, Gaming, etc.)
+- **Task Progress** - Track pomodoros per task
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Customization
+- **5 Theme Colors** - Red, Orange, Green, Blue, Purple
+- **Browser Notifications** - Get notified when sessions complete
+- **Sound Alerts** - Customizable alarm and ambient sounds
+- **Motivational Quotes** - Random quotes that refresh on reset
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Authentication
+- **Supabase Auth** - Secure email/password authentication
+- **User Profiles** - Personalized experience with your name
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Keyboard Shortcuts
+| Key | Action |
+|-----|--------|
+| `Space` | Start/Pause timer |
+| `R` | Reset timer |
+| `F` | Toggle Focus Mode |
+| `←` / `→` | Cycle through modes |
+| `↑` / `↓` | Adjust timer ±5 min |
+
+## 🛠 Tech Stack
+
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: CSS-in-JS (inline styles)
+- **Animation**: Framer Motion
+- **Icons**: Lucide React
+- **Auth & Database**: Supabase
+- **Deployment**: Vercel
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+- Supabase account (for auth)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/berkinyilmaz/pomodoro-app.git
+cd pomodoro-app
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your Supabase credentials
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment Variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
+
+## 📦 Build
+
+```bash
+# Production build
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📄 License
+
+MIT License - feel free to use this project for personal or commercial purposes.
+
+---
+
+Made with ❤️ by [Berkin Yilmaz](https://github.com/berkinyilmaz)
