@@ -16,7 +16,7 @@ export function Timer({ isFocusMode = false }: TimerProps) {
 
   const goalProgress = Math.min((todayStats.totalPomodoros / settings.dailyGoal) * 100, 100);
   const timerProgress = totalTime > 0 ? ((totalTime - timeLeft) / totalTime) * 100 : 0;
-  const themeColor = THEME_COLORS.find(t => t.id === settings.theme)?.hex || '#ef4444';
+  const themeColor = THEME_COLORS[settings.theme].primary;
   const currentTask = tasks.find(t => t.id === currentTaskId);
 
   return (

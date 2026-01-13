@@ -52,13 +52,13 @@ export const TASK_COLORS = [
   '#6b7280', // gray
 ];
 
-export const THEME_COLORS: { id: ThemeColor; hex: string; name: string }[] = [
-  { id: 'red', hex: '#ef4444', name: 'Red' },
-  { id: 'orange', hex: '#f97316', name: 'Orange' },
-  { id: 'green', hex: '#22c55e', name: 'Green' },
-  { id: 'blue', hex: '#3b82f6', name: 'Blue' },
-  { id: 'purple', hex: '#8b5cf6', name: 'Purple' },
-];
+export const THEME_COLORS: Record<ThemeColor, { primary: string; glow: string }> = {
+  red: { primary: '#ef4444', glow: 'rgba(239, 68, 68, 0.3)' },
+  orange: { primary: '#f97316', glow: 'rgba(249, 115, 22, 0.3)' },
+  green: { primary: '#22c55e', glow: 'rgba(34, 197, 94, 0.3)' },
+  blue: { primary: '#3b82f6', glow: 'rgba(59, 130, 246, 0.3)' },
+  purple: { primary: '#8b5cf6', glow: 'rgba(139, 92, 246, 0.3)' },
+};
 
 export const TIMER_PRESETS = [
   { id: 'classic', name: 'Classic', pomodoro: 25, shortBreak: 5, longBreak: 15 },

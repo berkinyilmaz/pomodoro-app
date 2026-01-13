@@ -6,7 +6,7 @@ export function TimerControls() {
   const { isRunning, isPaused, start, pause, resume, reset, skip } = useTimer();
   const { settings } = useSettings();
 
-  const themeColor = THEME_COLORS.find(t => t.id === settings.theme)?.hex || '#ef4444';
+  const themeColor = THEME_COLORS[settings.theme].primary;
 
   const handleMainButton = () => {
     if (isRunning) {

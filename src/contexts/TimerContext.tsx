@@ -126,8 +126,7 @@ export function TimerProvider({ children }: { children: ReactNode }) {
 
     // Send browser notification
     if (settings.notifications && 'Notification' in window && Notification.permission === 'granted') {
-      const emoji = prevMode === 'pomodoro' ? '🎉' : '☕';
-      const title = prevMode === 'pomodoro' ? 'Pomodoro Completed!' : 'Break Completed!';
+      const title = prevMode === 'pomodoro' ? '🎉 Pomodoro Completed!' : '☕ Break Completed!';
       const body = prevMode === 'pomodoro'
         ? 'Great work! Time for a break.'
         : 'Break finished. Ready to focus?';

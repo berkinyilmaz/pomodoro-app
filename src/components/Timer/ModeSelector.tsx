@@ -12,7 +12,7 @@ export function ModeSelector() {
   const { mode, setMode, isRunning } = useTimer();
   const { settings } = useSettings();
 
-  const themeColor = THEME_COLORS.find(t => t.id === settings.theme)?.hex || '#ef4444';
+  const themeColor = THEME_COLORS[settings.theme].primary;
 
   const handleModeChange = (newMode: TimerMode) => {
     if (isRunning) {

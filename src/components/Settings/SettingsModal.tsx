@@ -24,22 +24,22 @@ export function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
         <SettingsSection title="Theme">
           <div style={{ padding: '14px 24px' }}>
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-              {THEME_COLORS.map(theme => (
+              {(Object.entries(THEME_COLORS) as [ThemeColor, { primary: string; glow: string }][]).map(([id, color]) => (
                 <button
-                  key={theme.id}
+                  key={id}
                   type="button"
-                  onClick={() => updateSettings({ theme: theme.id as ThemeColor })}
+                  onClick={() => updateSettings({ theme: id })}
                   style={{
                     width: '40px',
                     height: '40px',
                     borderRadius: '50%',
-                    background: theme.hex,
-                    border: settings.theme === theme.id ? '3px solid #ffffff' : '2px solid rgba(255,255,255,0.2)',
+                    background: color.primary,
+                    border: settings.theme === id ? '3px solid #ffffff' : '2px solid rgba(255,255,255,0.2)',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
-                    boxShadow: settings.theme === theme.id ? `0 0 16px ${theme.hex}` : 'none',
+                    boxShadow: settings.theme === id ? `0 0 16px ${color.primary}` : 'none',
                   }}
-                  title={theme.name}
+                  title={id}
                 />
               ))}
             </div>
