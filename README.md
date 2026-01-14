@@ -4,7 +4,7 @@ A beautiful, feature-rich Pomodoro timer application built with React and TypeSc
 
 ## 🌐 Live Demo
 
-**[pomodoro-app-blush.vercel.app](https://pomodoro-app-blush.vercel.app)**
+**[pomodoro-app-fawn-theta.vercel.app](https://pomodoro-app-fawn-theta.vercel.app)**
 
 ## ✨ Features
 
